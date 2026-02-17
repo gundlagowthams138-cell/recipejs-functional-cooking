@@ -1,7 +1,6 @@
 /* ===============================
    Global Styles
 ================================= */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,7 +10,6 @@ body {
 /* ===============================
    Header
 ================================= */
-
 header {
     text-align: center;
     padding: 20px;
@@ -20,12 +18,26 @@ header {
 }
 
 /* ===============================
-   Controls Section
+   Controls Section (Filters, Sorts, Search)
 ================================= */
-
 .controls {
     padding: 20px;
     text-align: center;
+}
+
+/* Search Input (Part 4) */
+.controls input[type="text"] {
+    padding: 8px 12px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    transition: 0.3s ease;
+}
+
+.controls input[type="text"]:focus {
+    border-color: #ff7e5f;
+    outline: none;
 }
 
 button {
@@ -50,7 +62,6 @@ button.active {
 /* ===============================
    Recipe Container
 ================================= */
-
 #recipe-container {
     display: flex;
     flex-wrap: wrap;
@@ -62,7 +73,6 @@ button.active {
 /* ===============================
    Recipe Card
 ================================= */
-
 .recipe-card {
     background: white;
     padding: 15px;
@@ -70,6 +80,7 @@ button.active {
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     transition: 0.3s ease;
+    position: relative;
 }
 
 .recipe-card:hover {
@@ -79,7 +90,6 @@ button.active {
 /* ===============================
    Meta Info
 ================================= */
-
 .recipe-meta {
     display: flex;
     justify-content: space-between;
@@ -99,9 +109,31 @@ button.active {
 }
 
 /* ===============================
+   Favorites Button (Part 4)
+================================= */
+.favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.3s ease;
+}
+
+.favorite-btn.favorited {
+    color: #ff7e5f;
+}
+
+.favorite-btn:hover {
+    color: #ff7e5f;
+}
+
+/* ===============================
    Toggle Buttons (Part 3)
 ================================= */
-
 .toggle-btn {
     display: block;
     width: 100%;
@@ -118,7 +150,6 @@ button.active {
 /* ===============================
    Expandable Sections
 ================================= */
-
 /* Hidden by default */
 .steps-container,
 .ingredients-container {
@@ -139,7 +170,6 @@ button.active {
 /* ===============================
    Steps Styling
 ================================= */
-
 .steps-container ol {
     padding-left: 20px;
     margin: 0;
@@ -151,7 +181,6 @@ button.active {
 }
 
 /* Nested Steps Indentation */
-
 .steps-container ol ol {
     margin-top: 5px;
     padding-left: 20px;
@@ -166,7 +195,6 @@ button.active {
 /* ===============================
    Ingredients Styling
 ================================= */
-
 .ingredients-container ul {
     padding-left: 18px;
     margin: 0;
@@ -180,9 +208,27 @@ button.active {
 /* ===============================
    Responsive Design
 ================================= */
+@media (max-width: 800px) {
+    #recipe-container {
+        justify-content: center;
+    }
 
-@media (max-width: 600px) {
+    .recipe-card {
+        width: 45%;
+    }
+
+    .controls input[type="text"] {
+        width: 150px;
+    }
+}
+
+@media (max-width: 500px) {
     .recipe-card {
         width: 90%;
+    }
+
+    .controls input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
