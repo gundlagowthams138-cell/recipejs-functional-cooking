@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,9 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     background-color: #f5f5f5;
     color: #333;
-    line-height: 1.6;
 }
 
 /* Header */
@@ -18,7 +17,6 @@ header {
     color: white;
     text-align: center;
     padding: 2rem 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 header h1 {
@@ -27,18 +25,43 @@ header h1 {
 }
 
 header p {
-    font-size: 1.1rem;
     opacity: 0.9;
 }
 
-/* Main Container */
+/* Main */
 main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* Recipe Container */
+/* Controls */
+.controls {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.controls button {
+    padding: 0.6rem 1rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.controls button:hover {
+    background: #667eea;
+    color: white;
+}
+
+.controls button.active {
+    background: #667eea;
+    color: white;
+}
+
+/* Recipe Grid */
 #recipe-container {
     display: flex;
     flex-wrap: wrap;
@@ -50,9 +73,9 @@ main {
 .recipe-card {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     padding: 1.5rem;
     width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -63,7 +86,6 @@ main {
 
 .recipe-card h3 {
     color: #667eea;
-    font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
@@ -72,33 +94,31 @@ main {
     gap: 1rem;
     margin: 0.75rem 0;
     font-size: 0.9rem;
-    color: #666;
 }
 
 .recipe-card p {
     color: #555;
-    line-height: 1.5;
 }
 
 /* Difficulty Badges */
 .difficulty {
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
 .difficulty.easy {
-    background-color: #d4edda;
+    background: #d4edda;
     color: #155724;
 }
 
 .difficulty.medium {
-    background-color: #fff3cd;
+    background: #fff3cd;
     color: #856404;
 }
 
 .difficulty.hard {
-    background-color: #f8d7da;
+    background: #f8d7da;
     color: #721c24;
 }
